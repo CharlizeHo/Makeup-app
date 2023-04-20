@@ -3,6 +3,12 @@ import Logo from "../../public/logo.svg";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const navLinkStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      color: isActive ? "rgb(251 146 60)" : "",
+    };
+  };
   const links = [
     {
       index: 1,
@@ -20,12 +26,6 @@ const Navbar = () => {
       name: "About",
     },
   ];
-  const navLinkStyle = ({ isActive }) => {
-    return {
-      fontWeight: isActive ? "bold" : "normal",
-      color: isActive ? "rgb(251 146 60)" : "",
-    };
-  };
   return (
     <nav className="shadow-md">
       {/* Container */}
@@ -53,7 +53,7 @@ const Navbar = () => {
               <NavLink to="/profile" className="flex items-center gap-2">
                 <div className="indicator">
                   <span className="w-8">
-                    <i class="fa-solid fa-user"></i>
+                    <i className="fa-solid fa-user"></i>
                   </span>
                 </div>
               </NavLink>
