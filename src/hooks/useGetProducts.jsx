@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 const productsCount = 24;
 
-const baseURL = "http://makeup-api.herokuapp.com/api/v1/products.json";
+const baseURL = "http://makeup-api.herokuapp.com/api/v1/products";
 
 export default function useGetProducts() {
   const [singleProduct, setSingleProduct] = useState([]);
 
   useEffect(() => {
-    axios.get(baseURL).then((res) => {
+    axios.get(`${baseURL}.json`).then((res) => {
       const { data } = res;
       data.length = data.length > productsCount ? productsCount : data.length;
       setSingleProduct(data);
@@ -18,5 +18,3 @@ export default function useGetProducts() {
 
   return singleProduct;
 }
-
-
