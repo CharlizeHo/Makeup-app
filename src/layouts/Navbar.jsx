@@ -25,6 +25,11 @@ const Navbar = () => {
       path: "/about",
       name: "About",
     },
+    {
+      index: 4,
+      path: "/ListUsers",
+      name: "Users",
+    },
   ];
   return (
     <nav className="shadow-md">
